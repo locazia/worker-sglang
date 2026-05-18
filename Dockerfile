@@ -46,4 +46,5 @@ RUN --mount=type=secret,id=HF_TOKEN,required=false \
         python3 download_model.py; \
     fi
 
-CMD ["python3", "handler.py"]
+ENTRYPOINT []
+CMD ["python3", "-u", "handler.py"]
