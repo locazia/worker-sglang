@@ -12,7 +12,7 @@ WORKDIR /sgl-workspace
 COPY requirements.txt ./
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv pip install --system -r requirements.txt
+    UV_BREAK_SYSTEM_PACKAGES=1 uv pip install --system -r requirements.txt
 
 COPY handler.py engine.py utils.py download_model.py test_input.json ./
 COPY public/ ./public/
